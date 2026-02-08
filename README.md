@@ -1,8 +1,9 @@
 # weather_app
 
 A new Flutter project for the mini project of sixth semester.
-group 
+
 TECHNEXA
+
 members
 
 1.Sinto Tomy 
