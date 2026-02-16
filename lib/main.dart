@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const WeatherApp());
@@ -130,7 +131,7 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
       children: [
         Row(
           children: [
-            const Icon(Icons.agriculture, color: Colors.green),
+            const Icon(Icons.cloud, color: Colors.green),,
             const SizedBox(width: 8),
             Text(
               "Kerala Agri Weather",
