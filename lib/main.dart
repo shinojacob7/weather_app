@@ -134,7 +134,7 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
             const Icon(Icons.cloud, color: Colors.green),,
             const SizedBox(width: 8),
             Text(
-              "Kerala Agri Weather",
+              "Climeta",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
