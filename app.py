@@ -1,1 +1,13 @@
-from flask import Flask, request, jsonify\n\napp = Flask(__name__)\n\n\n@app.route('/predict', methods=['POST'])\ndef predict():\n    data = request.get_json()\n    # Here you would implement your heat stress prediction logic\n    # For now, we return a dummy response\n    prediction = {'heat_stress': 'Low', 'confidence': 0.95}  # Example response\n    return jsonify(prediction)\n\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    # Your heat stress prediction logic here
+    prediction = "Heat stress risk: Moderate"  # Placeholder response
+    return jsonify({'prediction': prediction})
+
+if __name__ == '__main__':
+    app.run(debug=True)
