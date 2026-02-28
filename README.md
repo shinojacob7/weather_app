@@ -1,29 +1,51 @@
 # weather_app
 
-A new Flutter project for the mini project of sixth semester.
+A weather and heat-stress prediction application built with Flutter (frontend) and Python (backend).
 
-TECHNEXA
+## Backend setup
 
-members
+1. Install dependencies:
 
-1.Sinto Tomy 
+```bash
+pip install -r requirements.txt
+```
 
-2.Kashinadh Rajesh
+2. (Optional) Configure API keys:
 
-3.Shino Jacob C X
+```bash
+export OPENWEATHERMAP_API_KEY="your_openweathermap_key"
+export WEATHERAPI_KEY="your_weatherapi_key"
+```
 
-4.Adithya A
+3. (Optional) Configure a trained model path:
 
-## Getting Started
+```bash
+export HEAT_STRESS_MODEL_PATH="backend/heat_stress_model.pkl"
+```
 
-This project is a starting point for a Flutter application.
+4. Run the backend:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+python app.py
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Backend endpoints
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `GET /health`:
+  - Health check with model status.
+- `POST /predict`:
+  - Body:
+    ```json
+    {
+      "temperature": 35,
+      "humidity": 70,
+      "wind_speed": 2
+    }
+    ```
+  - Returns heat-stress risk (`Low`, `Moderate`, `High` for rule-based mode).
+- `GET /weather?city=Kochi`:
+  - Returns combined weather payload from OpenWeatherMap and WeatherAPI.
+
+## Model training
+
+A starter training script is provided at `backend/heat_stress_predictor.py`.
